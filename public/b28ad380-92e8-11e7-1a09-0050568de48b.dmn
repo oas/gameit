@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" namespace="https://www.materna.de/dmn/atlas/b28ad380-92e8-11e7-1a09-0050568de48b" xmlns="https://www.materna.de/dmn/atlas/b28ad380-92e8-11e7-1a09-0050568de48b" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_b28ad380-92e8-11e7-1a09-0050568de48b" name="AUF_V00005_Einfache_Ausfuhranmeldung" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/">
+  <dmn:import name="AUF_V00357_Allgemeine_Prüfungen_StandardAusfuhranmeldung" namespace="https://www.materna.de/dmn/atlas/51a55e70-72a2-11e7-1a09-0050568de48b" locationURI="AUF_V00357_Allgemeine_Prüfungen_StandardAusfuhranmeldung.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
+  <dmn:import name="AUF_V367_Allgemeine_Prüfungen_Ausfuhranmeldung_ohne_SDEAusfuhr_zweistufig" namespace="https://www.materna.de/dmn/atlas/46ed8a81-a424-11e7-1a09-0050568de48b" locationURI="AUF_V367_Allgemeine_Prüfungen_Ausfuhranmeldung_ohne_SDEAusfuhr_zweistufig.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
+  <dmn:import name="AUF_V00271_Vorgangsbezogene_Prüfungen" namespace="https://www.materna.de/dmn/atlas/18d497d1-99dc-11e7-1a09-0050568de48b" locationURI="AUF_V00271_Vorgangsbezogene_Prüfungen.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
+  <dmn:import name="AUF_V00366_Allgemeine_Prüfungen_Ausfuhranmeldung_ohne_SDEAusfuhr_einstufig" namespace="https://www.materna.de/dmn/atlas/9dea0bd0-9df1-11e7-1a09-0050568de48b" locationURI="AUF_V00366_Allgemeine_Prüfungen_Ausfuhranmeldung_ohne_SDEAusfuhr_einstufig.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
+  <dmn:import name="AUF_V00303_Allgemeine_Prüfungen_SDEAusfuhr" namespace="https://www.materna.de/dmn/atlas/b7de00b1-9d00-11e7-1a09-0050568de48b" locationURI="AUF_V00303_Allgemeine_Prüfungen_SDEAusfuhr.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
+  <dmn:import name="AUF_V00295_Allgemeine_Prüfungen_vereinfachte_Ausfuhranmeldung" namespace="https://www.materna.de/dmn/atlas/ed048e51-d59d-11e7-1a09-0050568de48b" locationURI="AUF_V00295_Allgemeine_Prüfungen_vereinfachte_Ausfuhranmeldung.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
+  <dmn:import name="AUF_V00239_Allgemeine_anmeldeartunabhängige_Prüfungen_Ausfuhr" namespace="https://www.materna.de/dmn/atlas/e6874711-9200-11e7-1a09-0050568de48b" locationURI="AUF_V00239_Allgemeine_anmeldeartunabhängige_Prüfungen_Ausfuhr.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
+  <dmn:import name="AUF_V00250_Prüfung_Bestimmungsland_und_Rohmasse" namespace="https://www.materna.de/dmn/atlas/ce08de41-947d-11e7-1a09-0050568de48b" locationURI="AUF_V00250_Prüfung_Bestimmungsland_und_Rohmasse.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
+  <dmn:import name="AUF_V00245_Allgemeine_Prüfungen_Ausfuhranmeldung_ohne_SDEAusfuhr" namespace="https://www.materna.de/dmn/atlas/894ad071-9de6-11e7-1a09-0050568de48b" locationURI="AUF_V00245_Allgemeine_Prüfungen_Ausfuhranmeldung_ohne_SDEAusfuhr.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
+  <dmn:itemDefinition name="Zeitpunkt_der_Entscheidung_über_die_Annahme" isCollection="false">
+    <dmn:typeRef>any</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition name="Art_der_Ausfuhranmeldung" isCollection="false">
+    <dmn:typeRef>any</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition name="Inländischer_Verkehrszweig_der_Sendung_der_Lieferung" isCollection="false">
+    <dmn:typeRef>any</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition name="Tagesdatum" isCollection="false">
+    <dmn:typeRef>any</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:inputData id="_cadb23f9-780e-11e1-39d2-0050568d0117" name="Zeitpunkt_der_Entscheidung_über_die_Annahme">
+    <dmn:variable name="Zeitpunkt_der_Entscheidung_über_die_Annahme" typeRef="Zeitpunkt_der_Entscheidung_über_die_Annahme"/>
+  </dmn:inputData>
+  <dmn:inputData id="_e0676303-780f-11e1-39d2-0050568d0117" name="Art_der_Ausfuhranmeldung">
+    <dmn:variable name="Art_der_Ausfuhranmeldung" typeRef="Art_der_Ausfuhranmeldung"/>
+  </dmn:inputData>
+  <dmn:inputData id="_1994bf21-5840-11e8-2547-100000620801" name="Inländischer_Verkehrszweig_der_Sendung_der_Lieferung">
+    <dmn:variable name="Inländischer_Verkehrszweig_der_Sendung_der_Lieferung" typeRef="Inländischer_Verkehrszweig_der_Sendung_der_Lieferung"/>
+  </dmn:inputData>
+  <dmn:inputData id="_b97347ee-e176-11e7-1a09-0050568de48b" name="Tagesdatum">
+    <dmn:variable name="Tagesdatum" typeRef="Tagesdatum"/>
+  </dmn:inputData>
+  <dmn:decision id="_77e22c57-92d5-11e7-1a09-0050568de48b" name="Vereinfachte_Ausfuhranmeldung_zum_zweistufigen_Vereinfachten_Verfahren_SDEAusfuhr">
+    <dmn:variable name="Vereinfachte_Ausfuhranmeldung_zum_zweistufigen_Vereinfachten_Verfahren_SDEAusfuhr" typeRef="Any"/>
+    <dmn:informationRequirement id="_7b7a2747-f45f-4ab4-8297-73a2e1baaafc">
+      <dmn:requiredDecision href="https://www.materna.de/dmn/atlas/b7de00b1-9d00-11e7-1a09-0050568de48b#_c0d8791f-9392-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_a176065f-073a-407c-96bc-29bade524362">
+      <dmn:requiredDecision href="https://www.materna.de/dmn/atlas/ed048e51-d59d-11e7-1a09-0050568de48b#_9e0b5b21-6c4f-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_fdc4467f-0117-49e2-935e-432849d218f1">
+      <dmn:requiredDecision href="#_a7a5950c-a413-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:literalExpression>
+      <dmn:text>null</dmn:text>
+    </dmn:literalExpression>
+  </dmn:decision>
+  <dmn:decision id="_a7a5950c-a413-11e7-1a09-0050568de48b" name="Allgemeine_Prüfungen">
+    <dmn:variable name="Allgemeine_Prüfungen" typeRef="Any"/>
+    <dmn:informationRequirement id="_9ea611e1-c388-4daf-a36b-2ae4476ca72b">
+      <dmn:requiredDecision href="https://www.materna.de/dmn/atlas/18d497d1-99dc-11e7-1a09-0050568de48b#_c6d7b4a0-9200-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_d166b379-006b-4221-a08a-35bac3626575">
+      <dmn:requiredDecision href="https://www.materna.de/dmn/atlas/e6874711-9200-11e7-1a09-0050568de48b#_c6d7b493-9200-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_58145728-f822-4c57-8f72-35f99a746e2b">
+      <dmn:requiredDecision href="https://www.materna.de/dmn/atlas/ce08de41-947d-11e7-1a09-0050568de48b#_db301fe7-9478-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:literalExpression>
+      <dmn:text>null</dmn:text>
+    </dmn:literalExpression>
+  </dmn:decision>
+  <dmn:decision id="_77e22c69-92d5-11e7-1a09-0050568de48b" name="Standard_Ausfuhranmeldung_zum_zweistufigen_Normalverfahren_ohne_SDEAusfuhr">
+    <dmn:variable name="Standard_Ausfuhranmeldung_zum_zweistufigen_Normalverfahren_ohne_SDEAusfuhr" typeRef="Any"/>
+    <dmn:informationRequirement id="_cc97ad1b-5ce0-4b72-8f7f-3a32dcf4300c">
+      <dmn:requiredDecision href="#_a7a5950c-a413-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_eda278c1-6649-432d-a9f8-9eadfb1f2b73">
+      <dmn:requiredDecision href="https://www.materna.de/dmn/atlas/51a55e70-72a2-11e7-1a09-0050568de48b#_394a6d57-6c4d-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_4ca91375-91bd-491f-b682-2e2355dfe819">
+      <dmn:requiredDecision href="https://www.materna.de/dmn/atlas/894ad071-9de6-11e7-1a09-0050568de48b#_c0d87921-9392-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_11016dc3-f2a5-4a38-815c-4cb183dcd449">
+      <dmn:requiredDecision href="https://www.materna.de/dmn/atlas/46ed8a81-a424-11e7-1a09-0050568de48b#_a7a5951f-a413-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:literalExpression>
+      <dmn:text>null</dmn:text>
+    </dmn:literalExpression>
+  </dmn:decision>
+  <dmn:decision id="_307a14a6-87ef-11e7-1a09-0050568de48b" name="Einfache_Ausfuhranmeldung">
+    <dmn:variable name="Einfache_Ausfuhranmeldung" typeRef="Any"/>
+    <dmn:informationRequirement id="_6752eba4-db6f-4304-b3bf-fdd50effb0b8">
+      <dmn:requiredDecision href="#_77e22c69-92d5-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_67375f12-d406-42e6-84d5-996e63f4c009">
+      <dmn:requiredDecision href="#_77e22c59-92d5-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_4948a2a9-732e-49e2-bc16-0f735418c253">
+      <dmn:requiredInput href="#_e0676303-780f-11e1-39d2-0050568d0117"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_3a18a45f-a755-4651-86ec-f16d5a2583e5">
+      <dmn:requiredDecision href="#_77e22c57-92d5-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_967ad21a-ca6e-4d85-9ace-26a3d48003f1">
+      <dmn:requiredInput href="#_b97347ee-e176-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_8ff30207-7212-450f-a130-2413c1535008">
+      <dmn:requiredDecision href="#_77e22c6b-92d5-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_1fb7d6ad-783c-4952-a531-7b9966c766cd">
+      <dmn:requiredDecision href="#_77e22c67-92d5-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_635cc8b3-1e44-4f64-9ec5-2c6678e82e73">
+      <dmn:requiredInput href="#_cadb23f9-780e-11e1-39d2-0050568d0117"/>
+    </dmn:informationRequirement>
+    <dmn:literalExpression>
+      <dmn:text>null</dmn:text>
+    </dmn:literalExpression>
+  </dmn:decision>
+  <dmn:decision id="_77e22c67-92d5-11e7-1a09-0050568de48b" name="Vereinfachte_Ausfuhranmeldung_zum_zweistufigen_Normalverfahren_ohne_SDEAusfuhr">
+    <dmn:variable name="Vereinfachte_Ausfuhranmeldung_zum_zweistufigen_Normalverfahren_ohne_SDEAusfuhr" typeRef="Any"/>
+    <dmn:informationRequirement id="_1cbe7f7b-d142-4baa-9604-db0a3a731d2d">
+      <dmn:requiredDecision href="https://www.materna.de/dmn/atlas/ed048e51-d59d-11e7-1a09-0050568de48b#_9e0b5b21-6c4f-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_7ba790ff-26da-4145-9e9c-4de100f90f13">
+      <dmn:requiredDecision href="https://www.materna.de/dmn/atlas/894ad071-9de6-11e7-1a09-0050568de48b#_c0d87921-9392-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_c3f66008-93f2-475a-abcf-df951a2aa3ff">
+      <dmn:requiredDecision href="https://www.materna.de/dmn/atlas/46ed8a81-a424-11e7-1a09-0050568de48b#_a7a5951f-a413-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_f8128033-a976-4eab-afe9-0bd1f37e067a">
+      <dmn:requiredDecision href="#_a7a5950c-a413-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:literalExpression>
+      <dmn:text>null</dmn:text>
+    </dmn:literalExpression>
+  </dmn:decision>
+  <dmn:decision id="_77e22c6b-92d5-11e7-1a09-0050568de48b" name="StandardAusfuhranmeldung_zum_einstufigen_Verfahren">
+    <dmn:variable name="StandardAusfuhranmeldung_zum_einstufigen_Verfahren" typeRef="Any"/>
+    <dmn:informationRequirement id="_f89a7463-68b8-40ff-9a94-13f6dce795ee">
+      <dmn:requiredInput href="#_1994bf21-5840-11e8-2547-100000620801"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_9f12ad06-ce91-4088-a528-a5917e110b98">
+      <dmn:requiredDecision href="https://www.materna.de/dmn/atlas/51a55e70-72a2-11e7-1a09-0050568de48b#_394a6d57-6c4d-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_c53dd87e-2e1a-4906-b36b-b3093c2767ed">
+      <dmn:requiredDecision href="#_a7a5950c-a413-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_037f672d-a8ac-4d88-8378-92225affacc3">
+      <dmn:requiredDecision href="https://www.materna.de/dmn/atlas/894ad071-9de6-11e7-1a09-0050568de48b#_c0d87921-9392-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_bbdbb5c4-9cfc-45e8-a0f5-cdfa67fd3def">
+      <dmn:requiredDecision href="https://www.materna.de/dmn/atlas/9dea0bd0-9df1-11e7-1a09-0050568de48b#_4e02aece-9df0-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:literalExpression>
+      <dmn:text>null</dmn:text>
+    </dmn:literalExpression>
+  </dmn:decision>
+  <dmn:decision id="_77e22c59-92d5-11e7-1a09-0050568de48b" name="StandardAusfuhranmeldung_zum_zweistufigen_Vereinfachten_Verfahren_unter_Verwendung_einer_Bewilligung_SDEAusfuhr">
+    <dmn:variable name="StandardAusfuhranmeldung_zum_zweistufigen_Vereinfachten_Verfahren_unter_Verwendung_einer_Bewilligung_SDEAusfuhr" typeRef="Any"/>
+    <dmn:informationRequirement id="_b0cfbfbb-faa4-4b7c-a956-9554b22426e7">
+      <dmn:requiredDecision href="https://www.materna.de/dmn/atlas/51a55e70-72a2-11e7-1a09-0050568de48b#_394a6d57-6c4d-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_d3706530-e74c-4722-9493-bf75ae7e6698">
+      <dmn:requiredDecision href="https://www.materna.de/dmn/atlas/b7de00b1-9d00-11e7-1a09-0050568de48b#_c0d8791f-9392-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_ba8aced1-c5b4-4bc1-9bc8-df84061f3a4e">
+      <dmn:requiredDecision href="#_a7a5950c-a413-11e7-1a09-0050568de48b"/>
+    </dmn:informationRequirement>
+    <dmn:literalExpression>
+      <dmn:text>null</dmn:text>
+    </dmn:literalExpression>
+  </dmn:decision>
+  <dmn:textAnnotation id="_7549b213-af06-11ea-484d-100000647881" textFormat="text/plain">
+    <dmn:text>Bestimmungsland:  - inkl. Abgleich mit Zusätzl.Verfahren  - inkl.Abgleich mit Unterlagen    Rohmasse:  - inkl. Abgleich mit Summe Roh-/Eigenmasse  - inkl. Abgleich mit Vorhergehendem Verfahren - inkl. Prüfung Erfordernis bei Besond. Umstand  </dmn:text>
+  </dmn:textAnnotation>
+  <dmn:association id="_7549b213-af06-11ea-484d-100000647881" textFormat="text/plain">
+    <dmn:sourceRef href="#_db301fe7-9478-11e7-1a09-0050568de48b"/>
+    <dmn:targetRef href="#_7549b213-af06-11ea-484d-100000647881"/>
+  </dmn:association>
+  <dmn:textAnnotation id="_77e22c5d-92d5-11e7-1a09-0050568de48b" textFormat="text/plain">
+    <dmn:text>00001310</dmn:text>
+  </dmn:textAnnotation>
+  <dmn:association id="_77e22c5d-92d5-11e7-1a09-0050568de48b" textFormat="text/plain">
+    <dmn:sourceRef href="#_77e22c57-92d5-11e7-1a09-0050568de48b"/>
+    <dmn:targetRef href="#_77e22c5d-92d5-11e7-1a09-0050568de48b"/>
+  </dmn:association>
+  <dmn:textAnnotation id="_42ffdfd8-da8a-11ec-1c1d-0a0027000004" textFormat="text/plain">
+    <dmn:text>- Zeitpunkt der Anmeldung - Anzahl der Warenpositionen - Kennzeichen Container - Art der Ausfuhranmeldung  - Art der Anmeldung - Besondere Umstände - Beteiligte (Ausführer, Anm., DV, SU)  Abhängigkeiten der Beteiligten - Sicherheit </dmn:text>
+  </dmn:textAnnotation>
+  <dmn:association id="_42ffdfd8-da8a-11ec-1c1d-0a0027000004" textFormat="text/plain">
+    <dmn:sourceRef href="#_c6d7b4a0-9200-11e7-1a09-0050568de48b"/>
+    <dmn:targetRef href="#_42ffdfd8-da8a-11ec-1c1d-0a0027000004"/>
+  </dmn:association>
+  <dmn:textAnnotation id="_b67f1699-dff0-11ec-1c1d-0a0027000004" textFormat="text/plain">
+    <dmn:text>geprüft wird: - AUFX00103 Ausfuhrland - AUFX00141 Beteiligten-Konstellation (einstufig/SDE-PV)</dmn:text>
+  </dmn:textAnnotation>
+  <dmn:association id="_b67f1699-dff0-11ec-1c1d-0a0027000004" textFormat="text/plain">
+    <dmn:sourceRef href="#_4e02aece-9df0-11e7-1a09-0050568de48b"/>
+    <dmn:targetRef href="#_b67f1699-dff0-11ec-1c1d-0a0027000004"/>
+  </dmn:association>
+  <dmn:textAnnotation id="_c5ce9bb1-75bd-11e7-1a09-0050568de48b" textFormat="text/plain">
+    <dmn:text>00000110/ 00000210</dmn:text>
+  </dmn:textAnnotation>
+  <dmn:association id="_c5ce9bb1-75bd-11e7-1a09-0050568de48b" textFormat="text/plain">
+    <dmn:sourceRef href="#_77e22c67-92d5-11e7-1a09-0050568de48b"/>
+    <dmn:targetRef href="#_c5ce9bb1-75bd-11e7-1a09-0050568de48b"/>
+  </dmn:association>
+  <dmn:textAnnotation id="_42ffdfde-da8a-11ec-1c1d-0a0027000004" textFormat="text/plain">
+    <dmn:text>- AUFX00120 Beförderungsroute - AUFX00126 Pflicht Angabe ID Anmelder - AUFX00127 Pflicht Angabe ID DV   Voraussetzung:  - AUFX00077 Zug. Wirtschaftsbet. - AUFX00078 Existenz Warennummer Mineralöle und Gase - AUFX00079 Existenz Genehmigungen</dmn:text>
+  </dmn:textAnnotation>
+  <dmn:association id="_42ffdfde-da8a-11ec-1c1d-0a0027000004" textFormat="text/plain">
+    <dmn:sourceRef href="#_c0d87921-9392-11e7-1a09-0050568de48b"/>
+    <dmn:targetRef href="#_42ffdfde-da8a-11ec-1c1d-0a0027000004"/>
+  </dmn:association>
+  <dmn:textAnnotation id="_42ffdfd1-da8a-11ec-1c1d-0a0027000004" textFormat="text/plain">
+    <dmn:text>geprüft wird: - AUFX00147 Beförderungsmittel im Inland - AUFX00148 Beförderungsmittel an der Grenze (Standard-AM) - AUFX00149 Rechnungspreis</dmn:text>
+  </dmn:textAnnotation>
+  <dmn:association id="_42ffdfd1-da8a-11ec-1c1d-0a0027000004" textFormat="text/plain">
+    <dmn:sourceRef href="#_394a6d57-6c4d-11e7-1a09-0050568de48b"/>
+    <dmn:targetRef href="#_42ffdfd1-da8a-11ec-1c1d-0a0027000004"/>
+  </dmn:association>
+  <dmn:textAnnotation id="_77e22c7a-92d5-11e7-1a09-0050568de48b" textFormat="text/plain">
+    <dmn:text>00000901/ 00000902</dmn:text>
+  </dmn:textAnnotation>
+  <dmn:association id="_77e22c7a-92d5-11e7-1a09-0050568de48b" textFormat="text/plain">
+    <dmn:sourceRef href="#_77e22c6b-92d5-11e7-1a09-0050568de48b"/>
+    <dmn:targetRef href="#_77e22c7a-92d5-11e7-1a09-0050568de48b"/>
+  </dmn:association>
+  <dmn:textAnnotation id="_42ffdfd3-da8a-11ec-1c1d-0a0027000004" textFormat="text/plain">
+    <dmn:text>Voraussetzung: - AUFX00077 Zugelassener Wirtschaftsbeteiligter - AUFX00078 Existenz einer Warennummer für Mineralöle und Gase - AUFX00079 Existenz von Genehmigungen</dmn:text>
+  </dmn:textAnnotation>
+  <dmn:association id="_42ffdfd3-da8a-11ec-1c1d-0a0027000004" textFormat="text/plain">
+    <dmn:sourceRef href="#_c6d7b493-9200-11e7-1a09-0050568de48b"/>
+    <dmn:targetRef href="#_42ffdfd3-da8a-11ec-1c1d-0a0027000004"/>
+  </dmn:association>
+  <dmn:textAnnotation id="_77e22c62-92d5-11e7-1a09-0050568de48b" textFormat="text/plain">
+    <dmn:text>00001300</dmn:text>
+  </dmn:textAnnotation>
+  <dmn:association id="_77e22c62-92d5-11e7-1a09-0050568de48b" textFormat="text/plain">
+    <dmn:sourceRef href="#_77e22c59-92d5-11e7-1a09-0050568de48b"/>
+    <dmn:targetRef href="#_77e22c62-92d5-11e7-1a09-0050568de48b"/>
+  </dmn:association>
+  <dmn:textAnnotation id="_77e22c76-92d5-11e7-1a09-0050568de48b" textFormat="text/plain">
+    <dmn:text>0000100/ 00000200</dmn:text>
+  </dmn:textAnnotation>
+  <dmn:association id="_77e22c76-92d5-11e7-1a09-0050568de48b" textFormat="text/plain">
+    <dmn:sourceRef href="#_77e22c69-92d5-11e7-1a09-0050568de48b"/>
+    <dmn:targetRef href="#_77e22c76-92d5-11e7-1a09-0050568de48b"/>
+  </dmn:association>
+  <dmn:textAnnotation id="_42ffdfe1-da8a-11ec-1c1d-0a0027000004" textFormat="text/plain">
+    <dmn:text>geprüft wird: - AUFX00137 Ausfuhrland Deutschland - AUFX00104 Beteiligten-Konstellation - AUFX00138 Warenort - AUFX00139 Gestellen/Verpacken/Verladen §12 IV</dmn:text>
+  </dmn:textAnnotation>
+  <dmn:association id="_42ffdfe1-da8a-11ec-1c1d-0a0027000004" textFormat="text/plain">
+    <dmn:sourceRef href="#_a7a5951f-a413-11e7-1a09-0050568de48b"/>
+    <dmn:targetRef href="#_42ffdfe1-da8a-11ec-1c1d-0a0027000004"/>
+  </dmn:association>
+  <dmn:textAnnotation id="_42fece60-da8a-11ec-1c1d-0a0027000004" textFormat="text/plain">
+    <dmn:text>geprüft wird: - AUFX00147 Beförderungsmittel im Inland - AUFX00154 Beförderungsmittel an der Grenze (Vereinf. AM) - AUFX00149 Rechnungspreis</dmn:text>
+  </dmn:textAnnotation>
+  <dmn:association id="_42fece60-da8a-11ec-1c1d-0a0027000004" textFormat="text/plain">
+    <dmn:sourceRef href="#_9e0b5b21-6c4f-11e7-1a09-0050568de48b"/>
+    <dmn:targetRef href="#_42fece60-da8a-11ec-1c1d-0a0027000004"/>
+  </dmn:association>
+  <dmn:textAnnotation id="_42ffdfdb-da8a-11ec-1c1d-0a0027000004" textFormat="text/plain">
+    <dmn:text>- AUFX00103 Ausfuhrland  - AUFX00104 Beteiligten-Konstellation - AUFX00105 Warenort (SDE) - AUFX00107 Beförderungsroute (SDE) - AUFX00108 ID Anm. - AUFX00109 ID DV - AUFX00110 ID SU - AUFW00012 Gültigkeit Bewilligung - Referenznr. Bewilligung</dmn:text>
+  </dmn:textAnnotation>
+  <dmn:association id="_42ffdfdb-da8a-11ec-1c1d-0a0027000004" textFormat="text/plain">
+    <dmn:sourceRef href="#_c0d8791f-9392-11e7-1a09-0050568de48b"/>
+    <dmn:targetRef href="#_42ffdfdb-da8a-11ec-1c1d-0a0027000004"/>
+  </dmn:association>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram name="DRG">
+      <dmndi:DMNShape dmnElementRef="_42ffdfd8-da8a-11ec-1c1d-0a0027000004" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="0" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="191" y="1077" width="391" height="116" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_42ffdfd1-da8a-11ec-1c1d-0a0027000004" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="0" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="1492" y="871" width="348" height="66" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_db301fe7-9478-11e7-1a09-0050568de48b" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="204" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="666" y="975" width="200" height="50" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_77e22c6b-92d5-11e7-1a09-0050568de48b" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="204" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="1491" y="275" width="150" height="66" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_42fece60-da8a-11ec-1c1d-0a0027000004" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="0" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="168" y="743" width="332" height="79" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_77e22c67-92d5-11e7-1a09-0050568de48b" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="204" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="808" y="275" width="150" height="83" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_b67f1699-dff0-11ec-1c1d-0a0027000004" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="0" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="1699" y="745" width="308" height="50" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_77e22c5d-92d5-11e7-1a09-0050568de48b" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="0" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="696" y="229" width="58" height="42" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_c0d8791f-9392-11e7-1a09-0050568de48b" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="204" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="750" y="625" width="150" height="50" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_e0676303-780f-11e1-39d2-0050568d0117" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="0" green="188" blue="227" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="108" y="141" width="150" height="50" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_394a6d57-6c4d-11e7-1a09-0050568de48b" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="204" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="1491" y="621" width="150" height="91" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_cadb23f9-780e-11e1-39d2-0050568d0117" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="0" green="188" blue="227" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="158" y="291" width="150" height="50" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_77e22c76-92d5-11e7-1a09-0050568de48b" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="0" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="1306" y="218" width="58" height="42" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_a7a5951f-a413-11e7-1a09-0050568de48b" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="204" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="1200" y="625" width="183" height="83" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_77e22c57-92d5-11e7-1a09-0050568de48b" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="204" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="450" y="275" width="216" height="70" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_c6d7b4a0-9200-11e7-1a09-0050568de48b" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="204" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="199" y="975" width="216" height="50" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_a7a5950c-a413-11e7-1a09-0050568de48b" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="204" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="466" y="625" width="150" height="50" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_77e22c59-92d5-11e7-1a09-0050568de48b" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="204" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="1008" y="275" width="183" height="112" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_4e02aece-9df0-11e7-1a09-0050568de48b" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="204" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="1699" y="621" width="183" height="91" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_9e0b5b21-6c4f-11e7-1a09-0050568de48b" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="204" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="164" y="625" width="170" height="83" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_77e22c62-92d5-11e7-1a09-0050568de48b" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="0" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="1087" y="212" width="58" height="42" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_307a14a6-87ef-11e7-1a09-0050568de48b" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="204" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="875" y="41" width="150" height="50" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_1994bf21-5840-11e8-2547-100000620801" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="0" green="188" blue="227" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="1715" y="358" width="166" height="50" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_42ffdfd3-da8a-11ec-1c1d-0a0027000004" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="0" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="449" y="1256" width="370" height="79" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_c0d87921-9392-11e7-1a09-0050568de48b" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="204" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="975" y="625" width="150" height="83" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_c6d7b493-9200-11e7-1a09-0050568de48b" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="204" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="449" y="975" width="183" height="50" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_c5ce9bb1-75bd-11e7-1a09-0050568de48b" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="0" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="914" y="213" width="70" height="42" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_7549b213-af06-11ea-484d-100000647881" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="0" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="666" y="1077" width="267" height="146" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_b97347ee-e176-11e7-1a09-0050568de48b" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="0" green="188" blue="227" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="141" y="225" width="150" height="50" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_42ffdfdb-da8a-11ec-1c1d-0a0027000004" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="0" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="742" y="741" width="232" height="150" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_77e22c7a-92d5-11e7-1a09-0050568de48b" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="0" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="1537" y="212" width="58" height="42" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_77e22c69-92d5-11e7-1a09-0050568de48b" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="204" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="1258" y="275" width="154" height="83" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_42ffdfde-da8a-11ec-1c1d-0a0027000004" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="0" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="975" y="866" width="316" height="138" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape dmnElementRef="_42ffdfe1-da8a-11ec-1c1d-0a0027000004" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="0" green="0" blue="0" />
+          <dmndi:StrokeColor red="0" green="0" blue="0" />
+          <dmndi:FontColor red="0" green="0" blue="0" />
+        </dmndi:DMNStyle>
+        <dc:Bounds x="1200" y="745" width="284" height="75" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge dmnElementRef="_7b7a2747-f45f-4ab4-8297-73a2e1baaafc">
+        <di:waypoint x="825" y="625" />
+        <di:waypoint x="558" y="345" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_80a8b0b7-1c48-4b72-8ad3-21423c0be0c6">
+        <di:waypoint x="696" y="250" />
+        <di:waypoint x="591" y="275" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_a176065f-073a-407c-96bc-29bade524362">
+        <di:waypoint x="250" y="625" />
+        <di:waypoint x="558" y="345" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_fdc4467f-0117-49e2-935e-432849d218f1">
+        <di:waypoint x="541" y="625" />
+        <di:waypoint x="558" y="345" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_9ea611e1-c388-4daf-a36b-2ae4476ca72b">
+        <di:waypoint x="391" y="975" />
+        <di:waypoint x="541" y="675" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_d166b379-006b-4221-a08a-35bac3626575">
+        <di:waypoint x="541" y="975" />
+        <di:waypoint x="541" y="675" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_58145728-f822-4c57-8f72-35f99a746e2b">
+        <di:waypoint x="766" y="975" />
+        <di:waypoint x="541" y="675" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_cc97ad1b-5ce0-4b72-8f7f-3a32dcf4300c">
+        <di:waypoint x="541" y="625" />
+        <di:waypoint x="1335" y="358" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_eda278c1-6649-432d-a9f8-9eadfb1f2b73">
+        <di:waypoint x="1566" y="621" />
+        <di:waypoint x="1335" y="358" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_4ca91375-91bd-491f-b682-2e2355dfe819">
+        <di:waypoint x="1050" y="625" />
+        <di:waypoint x="1335" y="358" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_d068eee9-c167-47b7-ae9c-8131311e1527">
+        <di:waypoint x="1335" y="260" />
+        <di:waypoint x="1335" y="275" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_11016dc3-f2a5-4a38-815c-4cb183dcd449">
+        <di:waypoint x="1291" y="625" />
+        <di:waypoint x="1335" y="358" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_6752eba4-db6f-4304-b3bf-fdd50effb0b8">
+        <di:waypoint x="1335" y="275" />
+        <di:waypoint x="950" y="91" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_67375f12-d406-42e6-84d5-996e63f4c009">
+        <di:waypoint x="1100" y="275" />
+        <di:waypoint x="950" y="91" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_4948a2a9-732e-49e2-bc16-0f735418c253">
+        <di:waypoint x="250" y="141" />
+        <di:waypoint x="950" y="91" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_3a18a45f-a755-4651-86ec-f16d5a2583e5">
+        <di:waypoint x="558" y="275" />
+        <di:waypoint x="950" y="91" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_967ad21a-ca6e-4d85-9ace-26a3d48003f1">
+        <di:waypoint x="283" y="225" />
+        <di:waypoint x="950" y="91" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_8ff30207-7212-450f-a130-2413c1535008">
+        <di:waypoint x="1566" y="275" />
+        <di:waypoint x="950" y="91" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_1fb7d6ad-783c-4952-a531-7b9966c766cd">
+        <di:waypoint x="883" y="275" />
+        <di:waypoint x="950" y="91" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_635cc8b3-1e44-4f64-9ec5-2c6678e82e73">
+        <di:waypoint x="300" y="291" />
+        <di:waypoint x="950" y="91" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_1cbe7f7b-d142-4baa-9604-db0a3a731d2d">
+        <di:waypoint x="250" y="625" />
+        <di:waypoint x="883" y="358" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_7ba790ff-26da-4145-9e9c-4de100f90f13">
+        <di:waypoint x="1050" y="625" />
+        <di:waypoint x="883" y="358" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_c3f66008-93f2-475a-abcf-df951a2aa3ff">
+        <di:waypoint x="1291" y="625" />
+        <di:waypoint x="883" y="358" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_5fc686c8-568b-469d-ac88-a7a13a3a9f0e">
+        <di:waypoint x="950" y="255" />
+        <di:waypoint x="883" y="275" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_f8128033-a976-4eab-afe9-0bd1f37e067a">
+        <di:waypoint x="541" y="625" />
+        <di:waypoint x="883" y="358" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_468c6808-e190-4cfd-a5d0-11c99762b0ec">
+        <di:waypoint x="1566" y="254" />
+        <di:waypoint x="1566" y="275" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_f89a7463-68b8-40ff-9a94-13f6dce795ee">
+        <di:waypoint x="1724" y="358" />
+        <di:waypoint x="1583" y="341" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_9f12ad06-ce91-4088-a528-a5917e110b98">
+        <di:waypoint x="1579" y="621" />
+        <di:waypoint x="1566" y="341" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_c53dd87e-2e1a-4906-b36b-b3093c2767ed">
+        <di:waypoint x="541" y="625" />
+        <di:waypoint x="1566" y="341" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_037f672d-a8ac-4d88-8378-92225affacc3">
+        <di:waypoint x="1050" y="625" />
+        <di:waypoint x="1566" y="341" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_bbdbb5c4-9cfc-45e8-a0f5-cdfa67fd3def">
+        <di:waypoint x="1790" y="621" />
+        <di:waypoint x="1566" y="341" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_88d2c2cb-2b50-41bc-8cf7-97c479ca8a82">
+        <di:waypoint x="1116" y="254" />
+        <di:waypoint x="1100" y="275" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_b0cfbfbb-faa4-4b7c-a956-9554b22426e7">
+        <di:waypoint x="1566" y="621" />
+        <di:waypoint x="1100" y="387" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_d3706530-e74c-4722-9493-bf75ae7e6698">
+        <di:waypoint x="825" y="625" />
+        <di:waypoint x="1100" y="387" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge dmnElementRef="_ba8aced1-c5b4-4bc1-9bc8-df84061f3a4e">
+        <di:waypoint x="541" y="625" />
+        <di:waypoint x="1100" y="387" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>

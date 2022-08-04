@@ -34,10 +34,7 @@ export abstract class DMNElement {
 
 	// TODO: nur das aktualisieren, was auch geändert wurde? anhand des paths?
 	public construct() {
-		this.id = JSONPath.value(this.raw, DMN_ELEMENT_ID_PATH);
-		this.description = JSONPath.value(this.raw, DMN_ELEMENT_DESCRIPTION_PATH);
+		this.id = JSONPath.value(this.raw, JSONPath.stringify(["$", "_", "id"]));
+		this.description = JSONPath.value(this.raw, JSONPath.stringify(["$", "_", "description"]));
 	}
 }
-
-export const DMN_ELEMENT_ID_PATH = "$._.id";
-export const DMN_ELEMENT_DESCRIPTION_PATH = "$._.description";

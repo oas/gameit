@@ -36,7 +36,7 @@ export class DecisionModel extends NamedElement {
 
 	public construct() {
 		super.construct();
-		this.namespace = JSONPath.value(this.raw, "$._.namespace");
+		this.namespace = JSONPath.value(this.raw, JSONPath.stringify(["$", "_", "namespace"]));
 	}
 
 	public update(path: string, value: any) {

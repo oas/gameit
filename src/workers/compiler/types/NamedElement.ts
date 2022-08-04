@@ -23,6 +23,6 @@ export abstract class NamedElement extends DMNElement {
 
 	public construct() {
 		super.construct();
-		this.name = JSONPath.value(this.raw, "$._.name");
+		this.name = JSONPath.value(this.raw, JSONPath.stringify(["$", "_", "name"]));
 	}
 }

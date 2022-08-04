@@ -1,7 +1,5 @@
 import {Builder, Parser} from 'xml2js';
 import {CompileModelMessage, ModelProperties, UpdatePathMessage, WorkerMessage, WorkerMessageType} from "./compiler.t";
-import {NamedElement} from "./types/NamedElement";
-import JSONPath from "jsonpath";
 import {DecisionModel} from "./types/DecisionModel";
 
 let model:DecisionModel|null = null;

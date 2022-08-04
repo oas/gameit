@@ -1,6 +1,9 @@
 <template>
 <div>
-	<input type="text" v-on:input="up($event.target.value)">
+	<input type="text" v-model="path" v-on:input="up" size="50">
+	<input type="text" v-model="value" v-on:input="up" size="50">
+	<input type="checkbox" v-model="sync">
+	<!-- $.decision[?(@._.name=="Employment Status Statement")].literalExpression[0].text[0] -->
 	<pre>{{JSON.stringify(model, null, 2)}}</pre>
 	<pre>{{source}}</pre>
 </div>
@@ -12,6 +15,9 @@ import {onMounted, ref} from "vue";
 import {CompileModelMessage, ModelCompiledMessage, ModelExportedMessage, UpdatePathMessage, WorkerMessage, WorkerMessageType} from "./workers/compiler/compiler.t";
 import {DecisionModel} from "./workers/compiler/types/DecisionModel";
 
+const path = ref<string>("$._.name");
+const value = ref<string>("test");
+const sync = ref<boolean>(false);
 const model = ref<DecisionModel|null>(null);
 const source = ref<string|null>(null);
 const worker = ref<Worker|null>(null);
@@ -46,11 +52,15 @@ onMounted(async () => {
 })
 
 function up(text: string) {
-	console.info(text);
+	if(sync.value === false) {
+		return;
+	}
+
+	console.info(path.value, value.value);
 	worker.value!.postMessage({
 		type: WorkerMessageType.UPDATE_PATH,
-		path: "$._.name",
-		value: text
+		path: path.value,
+		value: value.value
 	} as UpdatePathMessage);
 }
 
